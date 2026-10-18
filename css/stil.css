@@ -58,6 +58,7 @@ a { color: var(--esma); }
 .ust-linkler .buton[hidden] { display: none; }
 
 main { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 20px 16px 28px; gap: 14px; }
+main[hidden] { display: none; }
 
 /* Sahne ve slaytlar: tüm ölçüler slayt genişliğine (cqw) göre, böylece ekranda ve PDF'te aynı oranda */
 .sahne {

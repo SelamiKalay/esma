@@ -46,3 +46,11 @@ git add -A
 git commit -m "3. esma içeriği"
 git push
 ```
+
+## Tek dosya sürümü (paylaşmak için)
+
+```bash
+node tools/tek-dosya.js
+```
+
+Bir üst klasöre `esmaülhüsna.html` yazar. CSS, veri ve betikler gömülüdür; içerik değiştikçe yeniden üret. PDF'ler gömülmez, "PDF İndir" yazdırma penceresini açar (orada "PDF olarak kaydet" seçilir).
