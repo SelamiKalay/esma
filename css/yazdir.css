@@ -1,0 +1,23 @@
+/* PDF / yazdırma düzeni: yatay 16:9, her sayfa bir slayt */
+@page { size: 1280px 720px; margin: 0; }
+
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+html, body { background: var(--kagit); }
+.ust-bar, .kontroller, .esma-gezinme, .taslak-notu { display: none !important; }
+main { padding: 0; gap: 0; display: block; }
+
+.sahne { width: 1280px; }
+.slayt {
+  --u: 12.8px;
+  display: flex !important;
+  width: 1280px;
+  height: 720px;
+  aspect-ratio: auto;
+  border-radius: 0;
+  box-shadow: none;
+  animation: none !important;
+  break-after: page;
+  page-break-after: always;
+}
+.slayt:last-child { break-after: auto; page-break-after: auto; }
