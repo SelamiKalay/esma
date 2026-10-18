@@ -1,6 +1,6 @@
 // Gün hesabı: başlangıç tarihinden bu yana geçen gün, 99'luk döngüde sıraya çevrilir.
 // Başlangıcı değiştirmek için yalnızca bu satırı düzenle (ay 1'den başlar).
-const BASLANGIC = { yil: 2026, ay: 10, gun: 19 };
+const BASLANGIC = { yil: 2026, ay: 10, gun: 18 };
 const TOPLAM = 99;
 
 // Parametreler ?esma=5 veya #esma=5 biçiminde gelebilir (tek dosya sürümü # kullanır).
