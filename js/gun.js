@@ -24,11 +24,9 @@ function bugununSirasi() {
   return fark < 0 ? 0 : (fark % TOPLAM) + 1;
 }
 
-// İlk döngü bitince her şey açık; o zamana kadar bugüne kadarki esmalar açık.
-function acikMi(sira) {
-  const fark = gecenGun();
-  if (fark >= TOPLAM) return true;
-  return fark >= 0 && sira <= fark + 1;
+// Kilit yok: isteyen her esmayı açabilir. Günün esması yalnızca ana sayfada ve arşivde öne çıkar.
+function acikMi() {
+  return true;
 }
 
 function baslangicMetni() {

@@ -244,6 +244,18 @@ blockquote { margin: 0; font-style: italic; font-size: calc(var(--u) * 2.3); lin
 .arsiv { width: min(100%, 1120px); margin: 0 auto; align-items: stretch; background: var(--desen-acik); }
 .arsiv h1 { margin: 8px 0 0; font-size: 34px; color: var(--murekkep); }
 .arsiv-ozet { margin: 0 0 6px; color: var(--soluk); font-family: var(--sans); font-size: 15px; }
+.arama {
+  width: 100%;
+  font: 16px var(--sans); /* 16px: iPhone'da odaklanınca sayfa yakınlaşmasın */
+  padding: 12px 16px;
+  border: 1px solid var(--cizgi);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--murekkep);
+}
+.arama:focus { outline: 2px solid var(--altin); outline-offset: 1px; }
+.kart[hidden] { display: none; }
+.sonuc-yok { font-family: var(--sans); color: var(--soluk); text-align: center; margin: 12px 0; }
 .izgara { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
 .kart {
   position: relative;

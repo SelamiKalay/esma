@@ -57,7 +57,9 @@ ${oku("css/yazdir.css")}
   <main id="arsiv-sayfa" class="arsiv" hidden>
     <h1>Arşiv</h1>
     <p id="ozet" class="arsiv-ozet"></p>
+    <input id="arama" class="arama" type="search" placeholder="İsim, anlam ya da sıra no ara (ör. rahman, merhamet, 17)" autocomplete="off" aria-label="Esma ara">
     <div id="izgara" class="izgara"></div>
+    <p id="sonuc-yok" class="sonuc-yok" hidden>Aramaya uyan esma bulunamadı.</p>
     <p class="kaynak-notu">Sıralama Tirmizî rivayetine (Diyanet listesi) göredir.</p>
   </main>
 
@@ -67,20 +69,31 @@ ${betik(oku("veri/esmalar.js"))}
 ${betik(oku("js/gun.js"))}
 ${betik(oku("js/desen.js"))}
 
-// Sayfa # ile değiştiğinde yeniden çiz.
-addEventListener("hashchange", () => { location.reload(); scrollTo(0, 0); });
+// Arşiv bir kez çizilir; sunum window.sunumAc ile istenen esmaya geçer.
+${betik(kapsam(oku("js/arsiv.js")))}
+${betik(kapsam(oku("js/sunum.js")))}
 
-if (parametreler.get("sayfa") === "arsiv") {
-  document.getElementById("sunum-sayfa").hidden = true;
-  document.getElementById("arsiv-sayfa").hidden = false;
-  document.getElementById("arsiv-link").hidden = true;
-  document.getElementById("pdf-indir").hidden = true;
-  document.getElementById("bugun-link").hidden = false;
-  document.title = "Arşiv · Esmaül Hüsna";
-  ${betik(kapsam(oku("js/arsiv.js")))}
-} else {
-  ${betik(kapsam(oku("js/sunum.js")))}
+// Görünümler arasında # ile, sayfa yenilenmeden geçilir (telefondaki dosya görüntüleyicileri yenilemeyi engelleyebiliyor).
+function gorunumuGoster() {
+  const p = new URLSearchParams(location.hash.slice(1));
+  const arsiv = p.get("sayfa") === "arsiv";
+  document.getElementById("sunum-sayfa").hidden = arsiv;
+  document.getElementById("arsiv-sayfa").hidden = !arsiv;
+  document.getElementById("arsiv-link").hidden = arsiv;
+  document.getElementById("bugun-link").hidden = !arsiv;
+  if (arsiv) {
+    document.getElementById("pdf-indir").hidden = true;
+    document.getElementById("sayac").textContent = \`\${bugununSirasi()}/\${TOPLAM}\`;
+    document.title = "Arşiv · Esmaül Hüsna";
+  } else {
+    const istenen = parseInt(p.get("esma"), 10);
+    const secildi = istenen >= 1 && istenen <= TOPLAM;
+    window.sunumAc(secildi ? istenen : bugununSirasi() || 1, secildi);
+  }
+  scrollTo(0, 0);
 }
+addEventListener("hashchange", gorunumuGoster);
+gorunumuGoster();
   </script>
 </body>
 </html>
