@@ -146,6 +146,86 @@ const ESMA_ICERIK = {
     renk: "#1F6F5C",
     kontrol: false,
   },
+  3: {
+    anlam_detay:
+      "Rahîm, rahmetini sürekli ve özel olarak gösteren demektir. Rahmân ismi dünyada herkesi kuşatan genel rahmeti anlatırken Rahîm, inanan ve iyilik yolunda olan kullara özellikle ahirette gösterilecek ikramı anlatır. İki isim çoğu zaman birlikte anılır; her \"Bismillahirrahmanirrahim\" dediğimizde ikisini birden hatırlarız.",
+    kok: "R-H-M kökü: merhamet; Rahîm sürekli ve kalıcı merhameti anlatır",
+    ayet: {
+      arapca: "هُوَ الَّذِي يُصَلِّي عَلَيْكُمْ وَمَلَائِكَتُهُ لِيُخْرِجَكُمْ مِنَ الظُّلُمَاتِ إِلَى النُّورِ ۚ وَكَانَ بِالْمُؤْمِنِينَ رَحِيمًا",
+      meal: "Sizi karanlıklardan aydınlığa çıkarmak için size rahmet eden, melekleri de sizin için rahmet dileyen O'dur. O, müminlere karşı çok merhametlidir.",
+      kaynak: "Ahzâb 33/43",
+    },
+    hayat:
+      "Bir öğretmen bütün sınıfa aynı dersi anlatır; ama emek veren, soru soran öğrencisiyle ayrıca ilgilenir, ona fazladan vakit ayırır. Rahîm isminin izi, yöneldikçe karşılık bulmaktır. Bir hatadan sonra pişman olup yeniden başlamak, verilen her ikinci şansın değerini bilmek bu isimle yaşamaktır.",
+    tefekkur: "Hayatımda karşılığını hak etmeden bana verilen ikinci şanslar nelerdi?",
+    dua: "Ey Rahîm! Beni rahmetinden ayırma; dünyada da ahirette de merhametinle muamele et.",
+    ozet: "Rahmân herkese, Rahîm O'na yönelene; kapı her an açıktır.",
+    kontrol: false,
+  },
+  4: {
+    anlam_detay:
+      "Melik, mülkün gerçek sahibi ve mutlak hükümdar demektir. İnsanların sahip olduğu her şey geçicidir ve emanettir; asıl sahiplik ve hüküm O'na aittir. O'nun hükümranlığı ne bir başkasından alınmıştır ne de sona erer.",
+    kok: "M-L-K kökü: sahip olmak, hükmetmek, yönetmek",
+    ayet: {
+      arapca: "فَتَعَالَى اللّٰهُ الْمَلِكُ الْحَقُّ",
+      meal: "Gerçek hükümdar olan Allah, çok yücedir.",
+      kaynak: "Tâhâ 20/114",
+    },
+    hayat:
+      "Telefonumuz, evimiz, hatta bedenimiz bile bize bir süreliğine verilmiştir. Kiraladığımız bir eve nasıl özen gösteriyorsak, bize emanet edilen her şeye de öyle davranmak Melik ismini anlamaktır. Bu bilinç hem cimrilikten hem de kibirden korur: Elimizdeki asıl bizim değildir.",
+    tefekkur: "\"Benim\" dediğim şeylerden hangisi gerçekten benim?",
+    dua: "Ey Melik! Bana verdiğin emanetleri yerli yerinde kullanmayı nasip et; kalbimi Senden başkasına kul etme.",
+    ozet: "Her şeyin gerçek sahibi O'dur; biz emanetçiyiz.",
+    kontrol: false,
+  },
+  5: {
+    anlam_detay:
+      "Kuddûs, her türlü eksiklikten, kusurdan ve yaratılmışlara benzemekten uzak, tertemiz demektir. Akla gelebilecek her noksanlıktan münezzehtir. \"Sübhânallah\" dediğimizde bu ismin anlamını dile getiririz.",
+    kok: "K-D-S kökü: temizlik, kutsallık, arınmışlık",
+    ayet: {
+      arapca: "يُسَبِّحُ لِلّٰهِ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ الْمَلِكِ الْقُدُّوسِ الْعَزِيزِ الْحَكِيمِ",
+      meal: "Göklerde ve yerde bulunanların hepsi; hükümdar, her türlü eksiklikten uzak, mutlak güç ve hikmet sahibi Allah'ı tesbih eder.",
+      kaynak: "Cuma 62/1",
+    },
+    hayat:
+      "Abdest alırken yalnızca elimizi yüzümüzü değil, niyetimizi de tazeleriz. Kuddûs ismi, temizliğin dışarıdan içeriye doğru bir yolculuk olduğunu hatırlatır: temiz bir oda, temiz bir söz, kin tutmayan bir kalp. Bugün dilimizi kırıcı sözlerden arındırmak bu ismin küçük ama gerçek bir yansımasıdır.",
+    tefekkur: "Kalbimde arınması gereken bir kırgınlık ya da kötü düşünce var mı?",
+    dua: "Ey Kuddûs! Kalbimi, dilimi ve niyetimi her türlü kirden arındır.",
+    ozet: "O tertemizdir; O'nu anan kalp de arınır.",
+    kontrol: false,
+  },
+  6: {
+    anlam_detay:
+      "Selâm, her türlü ayıp ve tehlikeden uzak olan, kullarını esenliğe ve barışa kavuşturan demektir. Gerçek huzur ve güven O'ndan gelir. Cennetin bir adı da \"Dâru's-selâm\", yani esenlik yurdudur.",
+    kok: "S-L-M kökü: esenlik, barış, kurtuluş (İslâm ve selâm aynı köktendir)",
+    ayet: {
+      arapca: "وَاللّٰهُ يَدْعُو إِلَى دَارِ السَّلَامِ",
+      meal: "Allah, esenlik yurduna çağırır.",
+      kaynak: "Yûnus 10/25",
+    },
+    hayat:
+      "\"Selâmün aleyküm\" demek, karşımızdakine \"Benden sana zarar gelmez, esenlik üzerine olsun\" demektir. Bu ismin yansıması, tanıdık tanımadık herkese selam vermek ve verdiğimiz selamın hakkını vermektir: elimizden ve dilimizden kimsenin incinmemesi.",
+    tefekkur: "Bugün kimin hayatına huzur, kimin hayatına huzursuzluk taşıdım?",
+    dua: "Ey Selâm! Bizi esenliğe kavuştur; kalbimize huzur, dilimize selam, evimize barış ver.",
+    ozet: "Esenlik O'ndandır; selam vermek o esenliği paylaşmaktır.",
+    kontrol: false,
+  },
+  7: {
+    anlam_detay:
+      "Mü'min, güven veren, kullarını korkudan emin kılan ve vaadine sadık olan demektir. Kalplere iman nurunu yerleştiren de O'dur. İnsan için kullanıldığında \"inanan\" anlamına gelir; Allah için ise güvenin kaynağı olmayı ifade eder.",
+    kok: "E-M-N kökü: güven, emniyet, iman, emanet",
+    ayet: {
+      arapca: "هُوَ اللّٰهُ الَّذِي لَا إِلٰهَ إِلَّا هُوَ الْمَلِكُ الْقُدُّوسُ السَّلَامُ الْمُؤْمِنُ",
+      meal: "O, kendisinden başka hiçbir ilah olmayan Allah'tır. O, hükümdardır, her türlü eksiklikten uzaktır, esenlik verendir, güven verendir.",
+      kaynak: "Haşr 59/23",
+    },
+    hayat:
+      "Peygamberimiz peygamberlikten önce de \"el-Emîn\", yani güvenilir diye bilinirdi. İman, emniyet ve emanet aynı kökten gelir. Bu ismin yansıması güvenilir biri olmaktır: söz verince tutmak, sırrı saklamak, ödünç alınanı zamanında geri vermek.",
+    tefekkur: "Çevremdeki insanlar bana gönül rahatlığıyla güvenebiliyor mu?",
+    dua: "Ey Mü'min! Kalbimi imanla, hayatımı güvenle doldur; beni güvenilir kullarından eyle.",
+    ozet: "Güvenin kaynağı O'dur; güvenilir olmak O'nun ismine yaraşır.",
+    kontrol: false,
+  },
 };
 
 const RENKLER = ["#1F4E5F", "#1F6F5C", "#6B3E5E", "#2E4A7D", "#7A4B22", "#3D5A3A", "#5B3F7A", "#7D2E3B", "#2F5D62"];
