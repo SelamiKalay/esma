@@ -1,6 +1,6 @@
 # Günlük Esmaül Hüsna
 
-99 esmayı 4 slaytlık, kaynakları gösterilmiş bir sunum olarak gösteren statik site. Plan: `../esmaul-husna-proje-plani.md`.
+99 esmayı 6 slaytlık, kaynakları gösterilmiş bir sunum olarak gösteren statik site. Plan: `../esmaul-husna-proje-plani.md`.
 
 ## Yerelde açma
 

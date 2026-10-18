@@ -81,10 +81,25 @@ function slaytlar(e) {
       ${alt}
     </section>`,
 
+    `<section class="slayt">
+      ${ust("3", "Hayatımıza Yansıması")}
+      <div class="govde"><p class="buyuk-metin">${kacis(e.hayat)}</p></div>
+      ${alt}
+    </section>`,
+
+    `<section class="slayt">
+      ${ust("4", "Tefekkür ve Dua")}
+      <div class="govde iki-kolon">
+        <div class="kutu"><h3>Düşün</h3><p>${kacis(e.tefekkur)}</p></div>
+        <div class="kutu dua"><h3>Dua</h3><p>${kacis(e.dua)}</p></div>
+      </div>
+      ${alt}
+    </section>`,
+
     `<section class="slayt kapanis">
       <div class="kapak-ic">
         <div class="arapca orta" lang="ar" dir="rtl">${kacis(e.arapca)}</div>
-        <p class="ozet">${kacis(e.okunus)}</p>
+        <p class="ozet">${kacis(e.ozet)}</p>
         <p class="yarin">Sıradaki: <strong>${kacis(sonraki.okunus)}</strong> <span lang="ar" dir="rtl">${kacis(sonraki.arapca)}</span></p>
       </div>
       ${alt}

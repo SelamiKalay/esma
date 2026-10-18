@@ -51,7 +51,7 @@ ${oku("css/yazdir.css")}
     <div id="kontroller" class="kontroller" hidden>
       <button id="geri" class="ok" aria-label="Önceki slayt">‹</button>
       <div class="ilerleme"><div id="ilerleme-dolu" class="ilerleme-dolu"></div></div>
-      <span id="slayt-no" class="slayt-sayac">1/4</span>
+      <span id="slayt-no" class="slayt-sayac">1/6</span>
       <button id="ileri" class="ok" aria-label="Sonraki slayt">›</button>
     </div>
     <nav id="esma-gezinme" class="esma-gezinme"></nav>
