@@ -1,23 +1,19 @@
-// Arşiv: 99 kartlık ızgara. Her esma açılabilir; günün esması "Bugün" etiketiyle işaretlenir.
+// Tüm İsimler sayfası: 99 kartlık ızgara ve arama.
 
 const kacis = (s) =>
   String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
-const bugunSira = bugununSirasi();
 const izgara = document.getElementById("izgara");
-document.getElementById("sayac").textContent = `${bugunSira}/${TOPLAM}`;
+document.getElementById("sayac").textContent = `${TOPLAM} esma`;
 document.getElementById("marka").href = baglanti("index.html");
 document.getElementById("bugun-link").href = baglanti("index.html");
 // Desen değişkeni arşiv alanına verilir; tek dosyada sunumun desenini ezmesin.
 izgara.closest("main").style.setProperty("--desen-acik", desenArkaPlan(7, "#B8913A", 0.12));
 
-document.getElementById("ozet").textContent =
-  bugunSira === 0
-    ? `Yolculuk ${baslangicMetni()} tarihinde başlıyor. Dilediğin esmayı şimdiden açabilirsin.`
-    : `Bugün ${bugunSira}. gün. Dilediğin esmayı açabilirsin.`;
+document.getElementById("ozet").textContent = "Dilediğin esmayı açabilir ya da aşağıdan arayabilirsin.";
 
 izgara.innerHTML = ESMALAR.map((e) => `
-  <a class="kart${e.sira === bugunSira ? " bugun" : ""}" style="--kart-renk:${e.renk}" href="${baglanti("index.html", { esma: e.sira })}" data-sira="${e.sira}">
+  <a class="kart" style="--kart-renk:${e.renk}" href="${baglanti("index.html", { esma: e.sira })}" data-sira="${e.sira}">
     <span class="kart-sira">${e.sira}</span>
     <span class="arapca" lang="ar" dir="rtl">${kacis(e.arapca)}</span>
     <span class="kart-okunus">${kacis(e.okunus)}</span>

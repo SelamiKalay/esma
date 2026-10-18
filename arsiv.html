@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arşiv · Esmaül Hüsna</title>
+  <title>Tüm İsimler · Esmaül Hüsna</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap">
@@ -14,21 +14,33 @@
     <a id="marka" class="marka" href="index.html">Esmaül Hüsna</a>
     <span id="sayac" class="sayac">–/99</span>
     <nav class="ust-linkler">
-      <a id="bugun-link" class="buton" href="index.html">Bugünün Esması</a>
+      <a id="bugun-link" class="buton" href="index.html">Sunuma Dön</a>
     </nav>
   </header>
 
   <main class="arsiv">
-    <h1>Arşiv</h1>
+    <h1>Tüm İsimler</h1>
     <p id="ozet" class="arsiv-ozet"></p>
-    <input id="arama" class="arama" type="search" placeholder="İsim, anlam ya da sıra no ara (ör. rahman, merhamet, 17)" autocomplete="off" aria-label="Esma ara">
+    <input id="arama" class="arama" type="search" placeholder="İsim, anlam ya da sıra no ara (ör. rahman, esirgeyen, 17)" autocomplete="off" aria-label="Esma ara">
     <div id="izgara" class="izgara"></div>
     <p id="sonuc-yok" class="sonuc-yok" hidden>Aramaya uyan esma bulunamadı.</p>
-    <p class="kaynak-notu">Sıralama Tirmizî rivayetine (Diyanet listesi) göredir.</p>
+    <section class="kaynaklar">
+      <h2>Kaynaklar</h2>
+      <ul>
+        <li><strong>İsimler ve sıralama:</strong> Tirmizî, “Daʿavât”, 82 (sunnah.com numarasıyla Tirmizî 3507) rivayetindeki liste; başa Allah ismi eklenerek 99 isim. TDV İslâm Ansiklopedisi'nin “Esmâ-i Hüsnâ” maddesinde belirtildiği gibi birçok âlim, bu listenin hadis metnine râvi tarafından eklendiği görüşündedir.</li>
+        <li><strong>Kısa anlamlar:</strong> Bekir Topaloğlu, “Esmâ-i Hüsnâ”, <em>TDV İslâm Ansiklopedisi</em> (1995), esmâ-i hüsnâ tablosu: <a href="https://islamansiklopedisi.org.tr/esma-i-husna">islamansiklopedisi.org.tr/esma-i-husna</a>. Değiştirilmeden alınmıştır.</li>
+        <li><strong>Kök ve açıklamalar:</strong> Her ismin <em>TDV İslâm Ansiklopedisi</em>'ndeki kendi maddesi; madde adı, yazarı ve yılı ilgili slaytın altında yazar. Açıklamalar maddelerden kendi cümlelerimizle özetlenmiştir.</li>
+        <li><strong>Ayetlerin Arapça metni:</strong> Tanzil Project (<a href="https://tanzil.net">tanzil.net</a>), AlQuran Cloud (<a href="https://alquran.cloud">alquran.cloud</a>) üzerinden.</li>
+        <li><strong>Mealler:</strong> Türkiye Diyanet Vakfı Meali, aynı veri seti üzerinden; değiştirilmeden alınmıştır. Uzun ayetlerde yalnızca ilgili bölüm gösterilmiş ve bu durum slaytta belirtilmiştir.</li>
+        <li><strong>Hadisler:</strong> Açıklamalarda geçen hadisler, TDV İslâm Ansiklopedisi maddelerinde gösterilen kaynaklarıyla birlikte verilmiştir.</li>
+        <li>Sunumda kaynağı gösterilemeyen yorum ve örneklere yer verilmemiştir.</li>
+        <li><strong>Erişim tarihi:</strong> 18 Ekim 2026. Metinler bu kaynaklarla karşılaştırılmıştır; bir din görevlisi tarafından henüz okunmamıştır.</li>
+      </ul>
+    </section>
   </main>
 
   <script src="veri/esmalar.js"></script>
-  <script src="js/gun.js"></script>
+  <script src="js/ortak.js"></script>
   <script src="js/desen.js"></script>
   <script src="js/arsiv.js"></script>
 </body>

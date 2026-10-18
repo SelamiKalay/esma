@@ -46,8 +46,8 @@ const sayfa = pathToFileURL(path.join(kok, "index.html")).href;
 
 for (const e of liste) {
   const dosya = path.join(cikti, `${String(e.sira).padStart(3, "0")}-${e.slug}.pdf`);
-  // ?gun=99: tüm esmalar açık sayılır; ?yazdir: gezinme kapalı, tüm slaytlar alt alta.
-  const url = `${sayfa}?gun=99&esma=${e.sira}&yazdir=1`;
+  // ?yazdir: gezinme kapalı, tüm slaytlar alt alta.
+  const url = `${sayfa}?esma=${e.sira}&yazdir=1`;
   execFileSync(tarayici, [
     "--headless=new",
     "--disable-gpu",

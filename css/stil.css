@@ -75,7 +75,7 @@ main[hidden] { display: none; }
   border-radius: calc(var(--u) * 1.2);
   background: var(--kagit) var(--desen-acik);
   box-shadow: 0 10px 40px -12px rgba(30, 38, 34, 0.35);
-  padding: calc(var(--u) * 4.5) calc(var(--u) * 6) calc(var(--u) * 6.5);
+  padding: calc(var(--u) * 4.5) calc(var(--u) * 6) calc(var(--u) * 8);
   flex-direction: column;
 }
 .slayt.aktif { display: flex; animation: belir 0.35s ease; }
@@ -149,6 +149,21 @@ blockquote { margin: 0; font-style: italic; font-size: calc(var(--u) * 2.3); lin
   color: var(--soluk);
   letter-spacing: 0.04em;
 }
+
+.slayt-kaynak {
+  position: absolute;
+  left: calc(var(--u) * 6);
+  right: calc(var(--u) * 4);
+  bottom: calc(var(--u) * 4.4);
+  margin: 0;
+  font-family: var(--sans);
+  font-size: calc(var(--u) * 1.05);
+  line-height: 1.4;
+  color: var(--soluk);
+  font-style: italic;
+}
+.slayt-kaynak:empty { display: none; }
+.kapanis .slayt-kaynak { color: rgba(255, 255, 255, 0.65); left: calc(var(--u) * 4); text-align: center; }
 
 /* Kapak ve kapanış: koyu zemin, altın desen */
 .kapak, .kapanis {
@@ -276,11 +291,13 @@ a.kart:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -10px rgba(30
 .kart .arapca { font-size: 30px; color: var(--kart-renk); line-height: 1.7; }
 .kart-sira { position: absolute; top: 8px; left: 10px; font-family: var(--sans); font-size: 12px; color: var(--soluk); font-variant-numeric: tabular-nums; }
 .kart-okunus { font-size: 15px; font-weight: 600; text-align: center; }
-.kart.bugun { outline: 2px solid var(--altin); outline-offset: 2px; }
-.kart.bugun::after { content: "Bugün"; position: absolute; top: 8px; right: 10px; font-family: var(--sans); font-size: 11px; font-weight: 600; color: var(--altin); }
 .kart.kilitli { opacity: 0.45; filter: grayscale(0.7); }
 .kilit { position: absolute; top: 6px; right: 8px; font-size: 13px; }
-.kaynak-notu { font-family: var(--sans); font-size: 13px; color: var(--soluk); margin-top: 16px; }
+.kaynaklar { margin-top: 28px; padding: 20px 22px; background: #fff; border: 1px solid var(--cizgi); border-radius: 12px; }
+.kaynaklar h2 { margin: 0 0 10px; font-size: 22px; }
+.kaynaklar ul { margin: 0; padding-left: 18px; }
+.kaynaklar li { font-family: var(--sans); font-size: 14px; line-height: 1.6; color: var(--soluk); margin-bottom: 6px; overflow-wrap: anywhere; }
+.kaynaklar strong { color: var(--murekkep); }
 
 /* Telefon dikey: slayt dikdörtgene döner, yazılar büyür */
 @media (max-width: 700px) and (orientation: portrait) {
@@ -290,12 +307,13 @@ a.kart:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -10px rgba(30
   .slayt {
     --u: 1.85cqw;
     aspect-ratio: 4 / 5.6;
-    padding: calc(var(--u) * 4) calc(var(--u) * 3.5) calc(var(--u) * 6) calc(var(--u) * 4.5);
+    padding: calc(var(--u) * 4) calc(var(--u) * 3.5) calc(var(--u) * 9) calc(var(--u) * 4.5);
   }
   .slayt::before { width: calc(var(--u) * 1.4); }
   .iki-kolon { flex-direction: column; gap: calc(var(--u) * 2); }
   .buyuk { font-size: calc(var(--u) * 11); }
-  .slayt-alt { left: calc(var(--u) * 4.5); right: calc(var(--u) * 3); }
+  .slayt-alt, .slayt-kaynak { left: calc(var(--u) * 4.5); right: calc(var(--u) * 3); }
+  .slayt-kaynak { font-size: calc(var(--u) * 1.1); }
   .govde p { font-size: calc(var(--u) * 2.2); }
   .kapak, .kapanis { padding: calc(var(--u) * 4); }
   .izgara { grid-template-columns: repeat(2, 1fr); }

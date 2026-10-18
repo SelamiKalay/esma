@@ -7,8 +7,6 @@ const kacis = (s) =>
 const pad3 = (n) => String(n).padStart(3, "0");
 const pdfYolu = (e) => `pdf/${pad3(e.sira)}-${e.slug}.pdf`;
 
-// Başlangıçtan önce açılırsa ilk esma gösterilir.
-const bugunSira = bugununSirasi() || 1;
 const yazdirModu = parametreler.has("yazdir");
 
 const sahne = document.getElementById("sahne");
@@ -39,12 +37,16 @@ function mesajGoster(baslik, metin, ekHtml = "") {
     </div>`;
 }
 
-function slaytlar(e, secildi) {
+function slaytlar(e) {
   const sonraki = ESMALAR[e.sira % TOPLAM];
-  const yarinMi = e.sira === bugunSira && !secildi;
   const etiket = `${e.sira}/${TOPLAM}`;
   const alt = `<footer class="slayt-alt"><span>${kacis(e.okunus)}</span><span>${etiket}</span></footer>`;
   const ust = (no, baslik) => `<header class="slayt-ust"><span class="slayt-no">${no}</span><h2>${baslik}</h2></header>`;
+  // Her slaytın altında, o slayttaki bilginin nereden geldiği yazılır.
+  const kaynak = (metin) => `<p class="slayt-kaynak">${metin}</p>`;
+  const tdv = e.tdv
+    ? `Kaynak: TDV İslâm Ansiklopedisi, “${kacis(e.tdv.madde)}” maddesi (${kacis(e.tdv.yazar)}, ${e.tdv.yil}); kısa anlam: “Esmâ-i Hüsnâ” maddesi (Bekir Topaloğlu, 1995).`
+    : "";
 
   return [
     `<section class="slayt kapak">
@@ -64,39 +66,26 @@ function slaytlar(e, secildi) {
         <p>${kacis(e.anlam_detay)}</p>
         ${e.kok ? `<p class="kok">${kacis(e.kok)}</p>` : ""}
       </div>
+      ${kaynak(tdv)}
       ${alt}
     </section>`,
 
     `<section class="slayt">
-      ${ust("2", "Kur'an'da")}
+      ${ust("2", "Kur'an'dan Bir Ayet")}
       <div class="govde ortali">
         <p class="arapca ayet" lang="ar" dir="rtl">${kacis(e.ayet.arapca)}</p>
         <blockquote>“${kacis(e.ayet.meal)}”</blockquote>
-        <p class="kaynak">${kacis(e.ayet.kaynak)}</p>
+        <p class="kaynak">${kacis(e.ayet.kaynak)}${e.ayet.bolum ? " (ayetin bir bölümü)" : ""}</p>
       </div>
-      ${alt}
-    </section>`,
-
-    `<section class="slayt">
-      ${ust("3", "Hayatımıza Yansıması")}
-      <div class="govde"><p class="buyuk-metin">${kacis(e.hayat)}</p></div>
-      ${alt}
-    </section>`,
-
-    `<section class="slayt">
-      ${ust("4", "Tefekkür ve Dua")}
-      <div class="govde iki-kolon">
-        <div class="kutu"><h3>Düşün</h3><p>${kacis(e.tefekkur)}</p></div>
-        <div class="kutu dua"><h3>Dua</h3><p>${kacis(e.dua)}</p></div>
-      </div>
+      ${kaynak(`Arapça metin: ${kacis(AYET_KAYNAGI.arapca)} · Meal: ${kacis(AYET_KAYNAGI.meal)}`)}
       ${alt}
     </section>`,
 
     `<section class="slayt kapanis">
       <div class="kapak-ic">
         <div class="arapca orta" lang="ar" dir="rtl">${kacis(e.arapca)}</div>
-        <p class="ozet">${kacis(e.ozet)}</p>
-        <p class="yarin">${yarinMi ? "Yarın" : "Sıradaki"}: <strong>${kacis(sonraki.okunus)}</strong> <span lang="ar" dir="rtl">${kacis(sonraki.arapca)}</span></p>
+        <p class="ozet">${kacis(e.okunus)}</p>
+        <p class="yarin">Sıradaki: <strong>${kacis(sonraki.okunus)}</strong> <span lang="ar" dir="rtl">${kacis(sonraki.arapca)}</span></p>
       </div>
       ${alt}
     </section>`,
@@ -113,15 +102,15 @@ function goster(i) {
   document.getElementById("ileri").disabled = aktif === liste.length - 1;
 }
 
-function sunumuKur(e, secildi) {
+function sunumuKur(e) {
   document.title = `${e.okunus} · ${e.sira}/${TOPLAM} · Esmaül Hüsna`;
   document.documentElement.style.setProperty("--esma", e.renk);
   document.documentElement.style.setProperty("--desen", desenArkaPlan(e.sira, "#D9B45A", 0.45));
   document.documentElement.style.setProperty("--desen-acik", desenArkaPlan(e.sira, e.renk, 0.1));
 
-  sahne.innerHTML = `<div class="slaytlar">${slaytlar(e, secildi).join("")}</div>`;
+  sahne.innerHTML = `<div class="slaytlar">${slaytlar(e).join("")}</div>`;
   if (!e.kontrol) {
-    sahne.insertAdjacentHTML("beforeend", `<p class="taslak-notu">Taslak içerik: henüz kontrol edilmedi.</p>`);
+    sahne.insertAdjacentHTML("beforeend", `<p class="taslak-notu">Metinler slaytlarda belirtilen kaynaklarla karşılaştırıldı; bir din görevlisi tarafından henüz okunmadı.</p>`);
   }
   if (yazdirModu) {
     document.body.classList.add("yazdir");
@@ -141,8 +130,8 @@ function esmaGezinme(e) {
     (sonraki ? `<a href="${baglanti("index.html", { esma: sonraki.sira })}">${kacis(sonraki.okunus)} ›</a>` : "<span></span>");
 }
 
-// Verilen sıradaki esmayı açar. secildi: kullanıcı belirli bir esma seçtiyse true (günün esması değil).
-function ac(siraNo, secildi) {
+// Verilen sıradaki esmayı açar.
+function ac(siraNo) {
   const e = ESMALAR[siraNo - 1];
   acikEsma = e;
   document.body.classList.remove("mesaj-modu");
@@ -160,7 +149,7 @@ function ac(siraNo, secildi) {
   pdfButon.hidden = false;
   pdfButon.href = pdfYolu(e);
   pdfButon.setAttribute("download", `${pad3(e.sira)}-${e.slug}.pdf`);
-  sunumuKur(e, secildi);
+  sunumuKur(e);
 }
 
 document.getElementById("geri").onclick = () => goster(aktif - 1);
@@ -208,6 +197,5 @@ window.sunumAc = ac;
 
 if (!window.TEK_DOSYA) {
   const istenen = parseInt(parametreler.get("esma"), 10);
-  const secildi = istenen >= 1 && istenen <= TOPLAM;
-  ac(secildi ? istenen : bugunSira, secildi);
+  ac(istenen >= 1 && istenen <= TOPLAM ? istenen : 1);
 }
