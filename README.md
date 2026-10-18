@@ -24,4 +24,25 @@ Test modu: `index.html?gun=45` (45. günmüş gibi), `index.html?esma=2` (belirl
 
 ## GitHub Pages'e yayınlama
 
-Bu klasörün içeriğini bir depoya (örn. `esma`) gönder, Settings > Pages > `main` dalı / kök klasör.
+Bu klasör zaten bir git deposu (`main` dalı, ilk commit atıldı).
+
+1. https://github.com/new adresinde **`esma`** adlı, **Public** bir depo oluştur. README, .gitignore veya lisans **ekleme** (depo boş olmalı).
+2. Bu klasörde şu iki komutu çalıştır:
+
+   ```bash
+   git remote add origin https://github.com/SelamiKalay/esma.git
+   git push -u origin main
+   ```
+
+   İlk gönderimde tarayıcıda GitHub girişi istenebilir.
+3. Depoda **Settings > Pages** bölümüne git. "Source" için **Deploy from a branch**, dal olarak **main** ve klasör olarak **/ (root)** seç, Save'e bas.
+4. 1-2 dakika sonra site şu adreste açılır: **https://selamikalay.github.io/esma/**
+5. Telefondan aç ve kontrol et: bugünün esması, Arşiv, PDF İndir.
+
+Sonraki güncellemeler:
+
+```bash
+git add -A
+git commit -m "3. esma içeriği"
+git push
+```
